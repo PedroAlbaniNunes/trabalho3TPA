@@ -9,6 +9,11 @@ public class Grafo<T> {
         this.vertices = new ArrayList<>();
     }
 
+
+    public ArrayList<Vertice<T>> getVertices() {
+        return this.vertices;
+    }
+
     //(i) Adicionar um vértice ao grafo: receba um objeto do tipo genérico T e, caso não exista no grafo um vértice com o valor passado, acrescente um vértice ao grafo contendo o objeto recebido;
     public Vertice<T> adicionarVertice(T valor) {
         Vertice<T> novoVertice = new Vertice<>(valor);

@@ -30,5 +30,10 @@ public class Main {
         grafo.adicionarAresta("E", "A", 1.0f);
 
         System.out.println(grafo.buscaEmLargura());
+
+        Dijkstra<String> calcular = new Dijkstra<>();
+
+        calcular.calcularTodosOsCaminhos(grafo, "A");
+
     }
 }
