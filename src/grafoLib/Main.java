@@ -35,5 +35,6 @@ public class Main {
 
         calcular.calcularTodosOsCaminhos(grafo, "A");
 
+        calcular.calcularCaminhoUnico(grafo, "A", "E");
     }
 }

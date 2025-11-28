@@ -1,7 +1,6 @@
 package grafoLib;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+
+import java.util.*;
 
 public class Dijkstra<T> {
 
@@ -45,7 +44,7 @@ public class Dijkstra<T> {
 
     //Algoritmo principal
 
-    public void calcularTodosOsCaminhos(Grafo<T> grafo, T origem){
+    private ArrayList<Infos> executarDijkstra(Grafo<T> grafo, T origem){
         ArrayList<Vertice<T>> verticesDoGrafo = grafo.getVertices();
         ArrayList<Infos> tabela = new ArrayList<>();
 
@@ -53,7 +52,7 @@ public class Dijkstra<T> {
         Vertice<T> verticeOrigem = encontrarVerticeInicial(origem, verticesDoGrafo);
         if (verticeOrigem == null){
             System.out.println("Vertice " + origem + "não encontrado.");
-            return;
+            return null;
         }
 
         for (Vertice<T> v : verticesDoGrafo){
@@ -98,6 +97,15 @@ public class Dijkstra<T> {
 
         }
 
+        return tabela;
+    }
+
+    public void calcularTodosOsCaminhos(Grafo<T> grafo, T origem){
+        ArrayList<Infos> tabela = executarDijkstra(grafo, origem);
+        if (tabela == null){
+            System.out.println("Origem não encontrada.");
+            return;
+        }
         imprimirRelatorio(tabela, origem);
     }
 
@@ -115,4 +123,38 @@ public class Dijkstra<T> {
         System.out.println("=============================");
     }
 
+
+    public void calcularCaminhoUnico(Grafo<T> grafo, T origem, T destino){
+        ArrayList<Infos> tabela = executarDijkstra(grafo, origem);
+
+        if (tabela == null){
+            System.out.println("Erro ao processar grafo.");
+            return;
+        }
+
+        Vertice<T> verticeDestino = encontrarVerticeInicial(destino, grafo.getVertices());
+        Infos infoDestino = obterInformação(verticeDestino, tabela);
+
+        if (infoDestino == null || infoDestino.distancia == Float.MAX_VALUE){
+            System.out.println("Não existe caminho entre " + origem + " e " + destino);
+            return;
+        }
+
+        ArrayList<T> caminho = new ArrayList<>();
+        Vertice<T> atual = verticeDestino;
+
+        while (atual != null){
+            caminho.add(atual.getDado());
+
+            Infos infoAtual = obterInformação(atual, tabela);
+            atual = infoAtual.pai;
+        }
+
+        Collections.reverse(caminho);
+
+        System.out.println("\nMenor caminho" + origem + "->" + destino);
+        System.out.println("Passos: " + caminho);
+        System.out.println("Custo total: " + infoDestino.distancia);
+        System.out.println("=====================");
+    }
 }
