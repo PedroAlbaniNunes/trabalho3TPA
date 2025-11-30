@@ -117,7 +117,7 @@ public class Dijkstra<T> {
             String distString = (info.distancia == Float.MAX_VALUE) ? "Infinito" : String.format("%.1f", info.distancia);
 
             System.out.println("Destino: " + info.vertice.getDado() +
-                    " | Distãncia: " + distString +
+                    " | Distancia: " + distString +
                     " | Anterior: " + paiString);
         }
         System.out.println("=============================");
@@ -152,7 +152,7 @@ public class Dijkstra<T> {
 
         Collections.reverse(caminho);
 
-        System.out.println("\nMenor caminho" + origem + "->" + destino);
+        System.out.println("\nMenor caminho: " + origem + " -> " + destino);
         System.out.println("Passos: " + caminho);
         System.out.println("Custo total: " + infoDestino.distancia);
         System.out.println("=====================");
