@@ -85,5 +85,4 @@ public class Grafo<T> {
         }
         return resultado.toString().trim(); //retorna o resultado da busca em largura
     }
-}
- //principal
+}//principal

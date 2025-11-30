@@ -23,7 +23,7 @@ public class Dijkstra<T> {
     //Metodos auxiliares
 
     // Busca na lista de informações qual objeto corresponde ao vértice físico
-    private Infos obterInformação(Vertice<T> alvo, ArrayList<Infos> listaInformacoes){
+    private Infos obterInformacao(Vertice<T> alvo, ArrayList<Infos> listaInformacoes){
         for (Infos info : listaInformacoes){
             if (info.vertice == alvo) {
                 return info;
@@ -59,7 +59,7 @@ public class Dijkstra<T> {
             tabela.add(new Infos(v));
         }
 
-        Infos infoOrigem = obterInformação(verticeOrigem, tabela);
+        Infos infoOrigem = obterInformacao(verticeOrigem, tabela);
         infoOrigem.distancia = 0;
 
         while(true) {
@@ -83,7 +83,7 @@ public class Dijkstra<T> {
 
             for(Aresta<T> aresta : atual.getDestinos()){
                 Vertice<T> vizinho = aresta.getDestino();
-                Infos infoVizinho = obterInformação(vizinho, tabela);
+                Infos infoVizinho = obterInformacao(vizinho, tabela);
 
                 if (infoVizinho != null && !infoVizinho.visitado){
                     float novaDistancia = menor.distancia + aresta.getPeso();
@@ -133,7 +133,7 @@ public class Dijkstra<T> {
         }
 
         Vertice<T> verticeDestino = encontrarVerticeInicial(destino, grafo.getVertices());
-        Infos infoDestino = obterInformação(verticeDestino, tabela);
+        Infos infoDestino = obterInformacao(verticeDestino, tabela);
 
         if (infoDestino == null || infoDestino.distancia == Float.MAX_VALUE){
             System.out.println("Não existe caminho entre " + origem + " e " + destino);
@@ -146,7 +146,7 @@ public class Dijkstra<T> {
         while (atual != null){
             caminho.add(atual.getDado());
 
-            Infos infoAtual = obterInformação(atual, tabela);
+            Infos infoAtual = obterInformacao(atual, tabela);
             atual = infoAtual.pai;
         }
 
