@@ -1,0 +1,11 @@
+0
+Vitoria;Vila Velha;5.0
+Vitoria;Serra;12.5
+Vila Velha;Guarapari;45.0
+Serra;Fundao;22.0
+Cariacica;Viana;10.0
+Vitoria;Cariacica;8.0
+Cariacica;Domingos Martins;35.5
+Viana;Guarapari;40.0
+Linhares;Colatina;60.0
+Serra;Linhares;80.0
