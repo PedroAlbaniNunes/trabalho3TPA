@@ -1,4 +1,8 @@
-package grafoLib;
+package grafoApp;
+
+import grafoLib.Dijkstra;
+import grafoLib.Grafo;
+import grafoLib.Prim;
 
 import java.util.Scanner;
 

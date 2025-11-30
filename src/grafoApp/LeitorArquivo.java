@@ -1,4 +1,6 @@
-package grafoLib;
+package grafoApp;
+
+import grafoLib.Grafo;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
