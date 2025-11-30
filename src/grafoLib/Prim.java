@@ -1,10 +1,6 @@
 package grafoLib;
 
 import java.util.*;
-import javax.swing.plaf.metal.MetalBorders;
-
-
-
 
 //contextualizando algoritmo de prim:
     // seleciona-se um nó -> identifica o nó conectado mais próximo e 
@@ -28,7 +24,7 @@ public class Prim<T>{
     }
 
     private Infos obterInfo(Vertice<T> alvo, ArrayList<Infos> tabela){
-        for (Infos info : MetalBorders.tabela) {
+        for (Infos info : tabela) {
             if(info.vertice.equals(alvo)){
                 return info;
             }
@@ -56,8 +52,9 @@ public class Prim<T>{
 
         ArrayList<Vertice<T>> vertices = grafo.getVertices();
         ArrayList<Infos> tabela = new ArrayList<>();
+        Vertice<T> verticeOrigem = null;
 
-        //para encontrar o vertice inicial
+        //cria tabela e identifica o vertice inicial
         for (Vertice<T> v : vertices){
             if (v.getDado().equals(origem)){
                 verticeOrigem = v;
@@ -65,7 +62,7 @@ public class Prim<T>{
             tabela.add(new Infos(v));
         }
 
-        if(VerticeOrigem == null){
+        if(verticeOrigem == null){
             System.out.println("Vértice de origem não encontrado no grafo.");
             return;
         }
@@ -82,9 +79,9 @@ public class Prim<T>{
 
             menor.incluso = true;
 
-            //relaxamento das arestas a partir do vertice atual
+            //verifica se encontrou algum caminho melhor para alcançar um vertice a partir de outro (Relaxamento)
             for (Aresta<T> aresta : menor.vertice.getDestinos()){
-                Vertice<T> vizinho : aresta.getDestino();
+                Vertice<T> vizinho = aresta.getDestino();
                 Infos infoVizinho = obterInfo(vizinho, tabela);
 
                 if (infoVizinho != null &&
