@@ -1,19 +1,13 @@
 
-# **Trabalho de Árvores Binárias Teoria de Programação Avançada**
+# **Trabalho de Grafos Teoria de Programação Avançada**
 
-Árvore binária é um conceito fundamental da estrutura de dados nas ciências da computação. Tal conceito estende-se de diferentes formas a fim de satisfazer as mais diversas necessidades que um cientista da computação possa ter. Neste trabalho serão exploradas algumas dessas formas, suas respectivas implementações em Java e sua complexidade computacional.
-
-
+Grafos são estruturas matemáticas compostas por vértices (ou nós) e arestas que conectam esses vértices, representando relacionamentos entre objetos. Eles são usados para modelar e resolver problemas complexos em diversas áreas, como redes sociais, sistemas de transporte e navegação na web. Nesse trabalho, escolhemos o Algoritmo de Dijkstra e Arvore Geradora Mínima Prim.
 ## **Etapas**
 
-1. Desenvolvimento de uma biblioteca de árvores binárias;
-2. Desenvolvimento de um app que utilize a biblioteca anteriormente desenvolvida;
-3. Confecção do relatório e primeira entrega do trabalho de árvores binárias;
-4. Desenvolvimento de uma classe de árvores AVL;
-5. Confecção do relatório sobre as árvores AVL;
-6.  Pesquisa sobre as estrutura de árvores binárias disponíveis na biblioteca padrão do Java
-
-
+1. Desenvolvimento de uma biblioteca de grafos;
+2. Acrescentar algoritmos basicos de grafos à biblioteca;
+3. Construir um algortmo que aplique a bibliteca
+4. Escrever um relatório, respondendo as questões trazidas pelo professor.
 
 ## **Integrantes do Projeto**
 | Aluno | GitHub | LinkedIn |
